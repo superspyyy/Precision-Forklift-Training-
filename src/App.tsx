@@ -9,8 +9,15 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
 import CourseDetail from "./pages/CourseDetail";
-import Booking from "./pages/Booking";
 import Contact from "./pages/Contact";
+import Complaints from "./pages/Complaints";
+import Reviews from "./pages/Reviews";
+import EmailDiagnostics from "./pages/EmailDiagnostics";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import CookiePolicy from "./pages/CookiePolicy";
+import HealthSafety from "./pages/HealthSafety";
+import EqualityDiversity from "./pages/EqualityDiversity";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -32,8 +39,15 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="courses" element={<Courses />} />
           <Route path="courses/:id" element={<CourseDetail />} />
-          <Route path="booking" element={<Booking />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="complaints" element={<Complaints />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="email-diagnostics" element={<EmailDiagnostics />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
+          <Route path="terms" element={<TermsConditions />} />
+          <Route path="cookies" element={<CookiePolicy />} />
+          <Route path="health-safety" element={<HealthSafety />} />
+          <Route path="equality-diversity" element={<EqualityDiversity />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronRight, Phone, Mail, MapPin, CheckCircle2, Star, Shield, Users, Trophy, Menu, X } from "lucide-react";
+import { ChevronRight, Phone, Mail, MapPin, CheckCircle2, Star, Shield, Users, Trophy, Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
 import { useState } from "react";
 
 import { Link, useLocation } from "react-router-dom";
@@ -11,6 +11,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Courses", path: "/courses" },
+    { name: "Reviews", path: "/reviews" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
@@ -53,8 +54,8 @@ export const Navbar = () => {
                 )}
               </Link>
             ))}
-            <Link to="/booking" className="bg-brand-yellow text-brand-black px-6 py-2.5 rounded-sm font-bold hover:bg-white transition-all">
-              BOOK NOW
+            <Link to="/contact" className="bg-brand-yellow text-brand-black px-6 py-2.5 rounded-sm font-bold hover:bg-white transition-all uppercase tracking-wider text-xs">
+              Get a Free Quote
             </Link>
           </div>
           
@@ -83,8 +84,8 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/booking" onClick={() => setIsOpen(false)} className="bg-brand-yellow text-brand-black px-6 py-4 rounded-sm font-bold w-full text-center">
-                BOOK NOW
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="bg-brand-yellow text-brand-black px-6 py-4 rounded-sm font-bold w-full text-center">
+                GET A FREE QUOTE
               </Link>
             </div>
           </motion.div>
@@ -116,7 +117,7 @@ export const Hero = () => {
         >
           <div className="flex items-center gap-2 mb-6">
             <div className="h-[1px] w-12 bg-brand-yellow"></div>
-            <span className="text-brand-yellow text-sm font-bold tracking-[0.3em] uppercase">Professional Certification</span>
+            <span className="text-brand-yellow text-sm font-bold tracking-[0.3em] uppercase">RTITB Accredited Training Provider</span>
           </div>
           
           <h1 className="text-6xl md:text-8xl font-black font-display leading-[0.9] uppercase mb-6">
@@ -125,12 +126,12 @@ export const Hero = () => {
           </h1>
           
           <p className="text-lg text-gray-300 mb-10 max-w-lg leading-relaxed">
-            Professional forklift training that builds skills, confidence, and safety. Get certified with the UK's leading training provider.
+            Professional on-site forklift training conducted at your premises using your equipment. Build skills, confidence, and absolute safety.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/courses" className="bg-brand-yellow text-brand-black px-8 py-4 rounded-sm font-bold text-lg hover:bg-white transition-all flex items-center justify-center gap-2 group">
-              VIEW COURSES <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Link to="/courses" className="bg-brand-yellow text-brand-black px-8 py-4 rounded-sm font-bold text-lg hover:bg-white transition-all flex items-center justify-center gap-2 group italic">
+              GET A FREE QUOTE <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link to="/about" className="border-2 border-white/20 hover:border-brand-yellow px-8 py-4 rounded-sm font-bold text-lg text-white transition-all text-center">
               LEARN MORE
@@ -195,18 +196,18 @@ export const About = () => {
           <div>
             <span className="text-brand-yellow text-sm font-bold tracking-widest uppercase block mb-4">About Us</span>
             <h2 className="text-4xl md:text-5xl font-black font-display uppercase mb-8 leading-tight">
-              Leading the Way in <span className="text-brand-yellow">Industrial Safety.</span>
+              Specialized <span className="text-brand-yellow">On-Site Training.</span>
             </h2>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              At Precision Forklift Training, we are committed to providing the highest standard of forklift operator training. Our mission is to ensure that every student who passes through our doors becomes a safe, efficient, and confident operator.
+              At Precision Forklift Training, we specialize in delivering high-impact operator training directly at your facility. We utilize your machines to ensure your team is proficient with the exact equipment they use daily.
             </p>
             
             <div className="space-y-4">
               {[
-                "Certified Training Programs",
-                "Fully Accredited Instructors",
-                "On-Site & Off-Site Training",
-                "Competitive Pricing & Flexible Scheduling"
+                "RTITB Accredited Training",
+                "Fully Licensed & Insured Instructors",
+                "Training Conducted on Your Premises",
+                "Your Equipment, Your Environment"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-brand-yellow/20 flex items-center justify-center text-brand-yellow">
@@ -232,20 +233,20 @@ export const Courses = () => {
     {
       title: "Novice Operator",
       duration: "3-5 Days",
-      description: "Complete training for those with little to no experience in operating a forklift.",
-      features: ["Theory & Safety", "Pre-use Inspection", "Full Controls Training", "Final Assessment"]
+      description: "Full training for individuals with no previous experience on Counterbalance (B1/B2) or Reach trucks.",
+      features: ["Safety & Theory", "Pre-use Inspection", "Full Controls Training", "Final Practical Exam"]
+    },
+    {
+      title: "Experienced Operator",
+      duration: "1-3 Days",
+      description: "For existing operators who have experience but no formal certification or their license has expired.",
+      features: ["Safety Refresher", "Competency Audit", "Machine Handling", "Updated Certification"]
     },
     {
       title: "Refresher Course",
       duration: "1 Day",
-      description: "For experienced operators who need to renew their certification or improve skills.",
-      features: ["Safety Updates", "Skills Review", "Control Check", "Re-certification"]
-    },
-    {
-      title: "Conversion Training",
-      duration: "1-2 Days",
-      description: "For operators looking to switch between different types of forklift machines.",
-      features: ["Machine Specifics", "Control Differences", "Load Management", "Safety Protocol"]
+      description: "Mandatory 3-year renewal for certified operators to ensure safety standards are maintained.",
+      features: ["Latest HSE Updates", "Correcting Bad Habits", "Control Mastery", "Renewal Cert"]
     }
   ];
 
@@ -281,9 +282,9 @@ export const Courses = () => {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-white/5 hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-3 transition-all uppercase tracking-widest text-xs">
-                Book Now
-              </button>
+              <Link to="/contact" className="w-full bg-white/5 hover:bg-brand-yellow hover:text-brand-black text-white font-bold py-3 transition-all uppercase tracking-widest text-xs inline-block text-center">
+                Get a Free Quote
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -369,7 +370,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-gray-500 uppercase mb-1">Email Us</div>
-                    <div className="text-xl font-bold">info@precisionforklift.co.uk</div>
+                    <div className="text-xl font-bold">contact@precisionforklift.co.uk</div>
                   </div>
                 </div>
                 
@@ -398,19 +399,22 @@ export const Contact = () => {
                   </div>
                 </div>
                 <div className="space-y-1">
-                    <label className="text-[10px] font-bold uppercase text-gray-500">Course Type</label>
+                    <label className="text-[10px] font-bold uppercase text-gray-500">Course of Interest</label>
                     <select className="w-full bg-white/5 border border-white/10 rounded-sm py-2 px-4 focus:outline-none focus:border-brand-yellow text-sm text-gray-400">
-                      <option>Novice Operator</option>
-                      <option>Refresher</option>
-                      <option>Conversion</option>
+                      <option>Counterbalance B1 (Novice)</option>
+                      <option>Counterbalance B1 (Experienced)</option>
+                      <option>Counterbalance B1 (Refresher)</option>
+                      <option>Counterbalance B2 (Novice)</option>
+                      <option>Reach Truck D1 (Novice/Experienced)</option>
+                      <option>Conversion (Category Switch)</option>
                     </select>
                 </div>
                 <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase text-gray-500">Message</label>
-                    <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-sm py-2 px-4 focus:outline-none focus:border-brand-yellow text-sm resize-none" placeholder="Tell us about your requirements..."></textarea>
+                    <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-sm py-2 px-4 focus:outline-none focus:border-brand-yellow text-sm resize-none" placeholder="Please specify machine types and number of operators..."></textarea>
                 </div>
                 <button className="w-full bg-brand-yellow text-brand-black font-black py-4 rounded-sm hover:bg-white transition-all uppercase tracking-widest">
-                  Send Inquiry
+                  Submit Quote Request
                 </button>
               </form>
             </div>
@@ -425,31 +429,77 @@ export const Footer = () => {
   return (
     <footer className="bg-brand-black border-t border-white/5 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-          <Link to="/" className="flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer text-white">
-            <div className="w-8 h-8 bg-brand-yellow rounded flex items-center justify-center p-1">
-              <img 
-                src="https://picsum.photos/seed/forklift-logo/100/100" 
-                alt="Precision Logo" 
-                className="w-full h-full object-contain brightness-0"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold font-display tracking-tight leading-none uppercase">Precision</span>
-              <span className="text-[8px] text-brand-yellow font-bold tracking-[0.2em] uppercase">Forklift Training</span>
-            </div>
-          </Link>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 border-b border-white/5 pb-12">
           
-          <div className="flex gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-            <Link to="/about" className="hover:text-white">About Us</Link>
-            <Link to="/courses" className="hover:text-white">Courses</Link>
-            <Link to="/contact" className="hover:text-white">Contact</Link>
+          {/* Logo & Info column */}
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center gap-3 group text-white">
+              <div className="w-8 h-8 bg-brand-yellow rounded flex items-center justify-center p-1 group-hover:scale-105 transition-all">
+                <img 
+                  src="https://picsum.photos/seed/forklift-logo/100/100" 
+                  alt="Precision Logo" 
+                  className="w-full h-full object-contain brightness-0"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold font-display tracking-tight leading-none uppercase">Precision</span>
+                <span className="text-[8px] text-brand-yellow font-bold tracking-[0.2em] uppercase">Forklift Training</span>
+              </div>
+            </Link>
+            <p className="text-[11px] text-gray-500 leading-relaxed uppercase">
+              RTITB Accredited training specialists for B1, B2 and D1 categories. On-site training conducted on your premises.
+            </p>
+            <div className="flex gap-4 pt-2">
+              <a href="#" className="p-2 bg-white/5 hover:bg-brand-yellow text-gray-400 hover:text-brand-black rounded transition-all"><Facebook className="w-4 h-4" /></a>
+              <a href="#" className="p-2 bg-white/5 hover:bg-brand-yellow text-gray-400 hover:text-brand-black rounded transition-all"><Instagram className="w-4 h-4" /></a>
+              <a href="#" className="p-2 bg-white/5 hover:bg-brand-yellow text-gray-400 hover:text-brand-black rounded transition-all"><Linkedin className="w-4 h-4" /></a>
+            </div>
           </div>
+
+          {/* Training Programs link column */}
+          <div>
+            <h4 className="text-[11px] font-black uppercase text-brand-yellow tracking-widest mb-4">Core Directory</h4>
+            <div className="flex flex-col gap-2 text-xs text-gray-400">
+              <Link to="/" className="hover:text-white transition-colors">Home Page</Link>
+              <Link to="/courses" className="hover:text-white transition-colors">Course Programs</Link>
+              <Link to="/about" className="hover:text-white transition-colors">About RTITB Scope</Link>
+              <Link to="/reviews" className="hover:text-white transition-colors">Trainee Reviews</Link>
+              <Link to="/contact" className="hover:text-white transition-colors">Get A Quote</Link>
+            </div>
+          </div>
+
+          {/* Compliance link column */}
+          <div>
+            <h4 className="text-[11px] font-black uppercase text-brand-yellow tracking-widest mb-4">UK Regulations</h4>
+            <div className="flex flex-col gap-2 text-xs text-gray-400">
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy (GDPR)</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/cookies" className="hover:text-white transition-colors">Cookie preferences</Link>
+              <Link to="/health-safety" className="hover:text-white transition-colors">Health & Safety Statement</Link>
+              <Link to="/equality-diversity" className="hover:text-white transition-colors">Equality & Diversity policy</Link>
+            </div>
+          </div>
+
+          {/* Support / Help column */}
+          <div>
+            <h4 className="text-[11px] font-black uppercase text-brand-yellow tracking-widest mb-4">Support & Quality</h4>
+            <div className="flex flex-col gap-2 text-xs text-gray-400">
+              <Link to="/complaints" className="hover:text-white transition-colors">Complaints Procedure</Link>
+              <Link to="/email-diagnostics" className="hover:text-brand-yellow transition-colors font-bold flex items-center gap-1">
+                <span>• Mail Diagnostics Panel</span>
+              </Link>
+              <div className="mt-2 text-[10px] text-gray-500 bg-white/5 p-2 rounded border border-white/5">
+                <span className="block font-bold text-gray-400 uppercase mb-0.5">Email Delivery Support</span>
+                Is email bouncing? Click the diagnostics link above to find correct SPF/MX fixes.
+              </div>
+            </div>
+          </div>
+
         </div>
         
         <div className="text-center text-[10px] font-medium text-gray-600 uppercase tracking-tighter">
-          © {new Date().getFullYear()} Precision Forklift Training Ltd. ALL RIGHTS RESERVED. REGISTERED IN ENGLAND & WALES.
+          © {new Date().getFullYear()} Precision Forklift Training Ltd. ALL RIGHTS RESERVED. REGISTERED IN ENGLAND & WALES. REGISTERED ACCREDITATION NUMBER: RTITB-PFT-49120.
         </div>
       </div>
     </footer>

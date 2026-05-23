@@ -6,44 +6,46 @@ import { ArrowRight, Clock, Award, Hammer } from "lucide-react";
 export default function Courses() {
   const allCourses = [
     {
-      id: "counterbalance-novice",
-      title: "Counterbalance (Novice)",
-      category: "B1 Category",
-      duration: "5 Days",
-      price: "£495",
+      id: "counterbalance-novice-b1",
+      title: "Counterbalance Novice B1",
+      category: "Up to 5,000kg",
+      duration: "3-5 Days",
+      icon: Award
+    },
+    {
+      id: "counterbalance-novice-b2",
+      title: "Counterbalance Novice B2",
+      category: "Up to 13,000kg",
+      duration: "3-5 Days",
       icon: Award
     },
     {
       id: "reach-novice",
-      title: "Reach Truck (Novice)",
-      category: "D1 Category",
-      duration: "5 Days",
-      price: "£525",
+      title: "Reach Truck Novice D1",
+      category: "Reach Truck",
+      duration: "3-5 Days",
       icon: Award
     },
     {
-      id: "counterbalance-refresh",
-      title: "Counterbalance Refresher",
-      category: "B1 Category",
+      id: "experienced-operator",
+      title: "Experienced Operator",
+      category: "B1 / B2 / D1",
+      duration: "1-3 Days",
+      icon: Award
+    },
+    {
+      id: "refresher-course",
+      title: "Refresher Training",
+      category: "3-Year Renewal",
       duration: "1 Day",
-      price: "£150",
       icon: Clock
     },
     {
-      id: "reach-refresh",
-      title: "Reach Truck Refresher",
-      category: "D1 Category",
-      duration: "1 Day",
-      price: "£165",
-      icon: Clock
-    },
-    {
-       id: "telehandler-training",
-       title: "Telehandler Certification",
-       category: "J2 Category",
-       duration: "3-5 Days",
-       price: "£750",
-       icon: Hammer
+      id: "conversion-training",
+      title: "Conversion Training",
+      category: "Category Switch",
+      duration: "1-2 Days",
+      icon: Hammer
     }
   ];
 
@@ -52,9 +54,9 @@ export default function Courses() {
       {/* Header */}
       <section className="py-20 bg-brand-gray border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black font-display uppercase mb-4">Training <span className="text-brand-yellow">Programs</span></h1>
+          <h1 className="text-5xl md:text-7xl font-black font-display uppercase mb-4 tracking-tighter">Training <span className="text-brand-yellow italic underline">Programs</span></h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed uppercase tracking-widest font-bold">
-            Industry recognized certifications for all machine types.
+            RTITB Accredited training on your premises.
           </p>
         </div>
       </section>
@@ -74,7 +76,6 @@ export default function Courses() {
                     <div className="w-12 h-12 bg-brand-yellow/10 rounded flex items-center justify-center text-brand-yellow">
                         <course.icon className="w-6 h-6" />
                     </div>
-                    <div className="text-2xl font-black text-brand-yellow">{course.price}</div>
                 </div>
                 
                 <div className="flex flex-col flex-grow">

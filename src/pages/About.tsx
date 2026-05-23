@@ -8,42 +8,14 @@ export default function About() {
       {/* Header */}
       <section className="py-20 bg-brand-gray border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black font-display uppercase mb-4">About <span className="text-brand-yellow">Us</span></h1>
+          <h1 className="text-5xl md:text-7xl font-black font-display uppercase mb-4 tracking-tighter">About <span className="text-brand-yellow italic underline">Us</span></h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed uppercase tracking-widest font-bold">
-            The Gold Standard in Forklift Training since 2008.
+            RTITB Accredited Training Provider.
           </p>
         </div>
       </section>
 
       <AboutSection />
-
-      {/* Stats Section */}
-      <section className="py-24 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center text-white">
-            {[
-              { label: "Students Trained", value: "5,000+", icon: Users },
-              { label: "Pass Rate", value: "99%", icon: Trophy },
-              { label: "Accreditations", value: "10+", icon: Shield },
-              { label: "Safety Rating", value: "5/5", icon: Star }
-            ].map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center gap-4"
-              >
-                <div className="w-16 h-16 bg-brand-yellow/10 rounded-full flex items-center justify-center text-brand-yellow">
-                  <stat.icon className="w-8 h-8" />
-                </div>
-                <div className="text-4xl font-black font-display">{stat.value}</div>
-                <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Our Values */}
       <section className="py-24 bg-brand-gray">

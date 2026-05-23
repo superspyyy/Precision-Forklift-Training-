@@ -7,12 +7,20 @@ export default function Contact() {
       {/* Header */}
       <section className="py-20 bg-brand-gray border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-black font-display uppercase mb-4">Contact <span className="text-brand-yellow">Us</span></h1>
+          <h1 className="text-5xl md:text-7xl font-black font-display uppercase mb-4 tracking-tighter">Get a <span className="text-brand-yellow italic underline">Free Quote</span></h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed uppercase tracking-widest font-bold">
-            We're here to help with your training needs.
+            On-site training tailored to your facility.
           </p>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="bg-brand-yellow/5 border border-brand-yellow/20 p-6 rounded-sm text-center">
+          <p className="text-gray-300 text-sm font-medium uppercase tracking-wider">
+            Important: We specialize exclusively in <span className="text-brand-yellow font-black italic">On-Site Training</span> conducted at your premises using your own equipment.
+          </p>
+        </div>
+      </div>
 
       <ContactSection />
 
